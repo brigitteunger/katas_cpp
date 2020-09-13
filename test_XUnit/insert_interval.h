@@ -7,28 +7,29 @@ public:
     std::vector<std::vector<int>> insert(std::vector<std::vector<int>>& intervals, std::vector<int>& newInterval) {
         if (newInterval.empty()) return intervals;
         
-        intervals.insert(intervals.begin(), newInterval);
-    
-        for (size_t i = 1; i < intervals.size(); i++) {
-            if ( isOverlapping(intervals[i-1], intervals[i])){
-                intervals[i-1][0] = min(intervals[i-1][0], intervals[i][0]);
-                intervals[i-1][1] = max(intervals[i-1][1], intervals[i][1]);
-                intervals.erase(intervals.begin() + i);
-                i--;
+        std::vector<std::vector<int>> newIntervals;
+        bool intervalInserted = false;
+            
+        for (size_t i = 0; i < intervals.size(); i++) {
+            if ( isOverlapping(newInterval, intervals[i])){
+                newInterval[0] = min(newInterval[0], intervals[i][0]);
+                newInterval[1] = max(newInterval[1], intervals[i][1]);
+                
             }
-            else if (intervals[i-1][0] > intervals[i][0]) {
-                int temp_0 = intervals[i - 1][0];
-                int temp_1 = intervals[i - 1][1];
-                intervals[i - 1][0] = intervals[i][0];
-                intervals[i - 1][1] = intervals[i][1];
-                intervals[i][0] = temp_0;
-                intervals[i][1] = temp_1;
+            else if (newInterval[0] > intervals[i][0]) {
+                newIntervals.push_back(intervals[i]);
             }
             else {
+                newIntervals.push_back(newInterval);
+                newIntervals.insert(newIntervals.end(), intervals.begin() + i, intervals.end());
+                intervalInserted = true;
                 break;
             }
-        }        
-        return intervals;
+        }      
+        if (!intervalInserted) {
+            newIntervals.push_back(newInterval);
+        }
+        return newIntervals;
     }
 private:
     bool isOverlapping(std::vector<int>& interval_1, std::vector<int>& interval_2) {

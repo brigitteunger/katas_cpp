@@ -62,7 +62,7 @@ BOOST_AUTO_TEST_CASE(test_3) {
 BOOST_AUTO_TEST_CASE(test_4) {
 	std::vector<std::vector<int>> intervals = { {2,3},{6,9} };
 	std::vector<int> newInterval = { 10,11 };
-	std::vector<std::vector<int>> expected = { {2,3},{6,9},{10,11} };
+	std::vector<std::vector<int>> expected = { {2,3},{6,9},{10,11}};
 	//std::cout << "expected: " << std::endl;
 	//print_vector(expected);
 	Solution sol;
