@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test_compination_sum_3.cpp">
+    <ClCompile Include="test_insert_interval.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -24,6 +24,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="auxiliary_functions.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="insert_interval.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

@@ -141,11 +141,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="test_compination_sum_3.cpp" />
+    <ClCompile Include="test_insert_interval.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="auxiliary_functions.h" />
     <ClInclude Include="combination_sum_3.h" />
+    <ClInclude Include="insert_interval.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
