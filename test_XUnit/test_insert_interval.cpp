@@ -8,12 +8,6 @@
 
 BOOST_AUTO_TEST_SUITE(insert_intervals)
 
-BOOST_AUTO_TEST_CASE(laenge)
-{
-	std::string s("xyz");
-	BOOST_CHECK(s.length() == 3);
-}
-
 BOOST_AUTO_TEST_CASE(test_1) {
 	std::vector<std::vector<int>> intervals = { {1,3},{6,9} };
 	std::vector<int> newInterval = { 2,5 };
